@@ -12,46 +12,48 @@ import XCTest
 final class DNSMediaTypeTests: XCTestCase {
     
     func testAllCases() throws {
-        let expectedCases: [DNSMediaType] = [.image, .video, .audio, .document, .other]
-        XCTAssertEqual(DNSMediaType.allCases.count, 5)
+        let expectedCases: [DNSMediaType] = [.unknown, .animatedImage, .pdfDocument, .staticImage, .text, .video]
+        XCTAssertEqual(DNSMediaType.allCases.count, 6)
         for expectedCase in expectedCases {
             XCTAssertTrue(DNSMediaType.allCases.contains(expectedCase))
         }
     }
     
     func testRawValues() throws {
-        XCTAssertEqual(DNSMediaType.image.rawValue, "image")
+        XCTAssertEqual(DNSMediaType.unknown.rawValue, "unknown")
+        XCTAssertEqual(DNSMediaType.animatedImage.rawValue, "animatedImage")
+        XCTAssertEqual(DNSMediaType.pdfDocument.rawValue, "pdfDocument")
+        XCTAssertEqual(DNSMediaType.staticImage.rawValue, "staticImage")
+        XCTAssertEqual(DNSMediaType.text.rawValue, "text")
         XCTAssertEqual(DNSMediaType.video.rawValue, "video")
-        XCTAssertEqual(DNSMediaType.audio.rawValue, "audio")
-        XCTAssertEqual(DNSMediaType.document.rawValue, "document")
-        XCTAssertEqual(DNSMediaType.other.rawValue, "other")
     }
     
     func testInitFromRawValue() throws {
-        XCTAssertEqual(DNSMediaType(rawValue: "image"), .image)
+        XCTAssertEqual(DNSMediaType(rawValue: "unknown"), .unknown)
+        XCTAssertEqual(DNSMediaType(rawValue: "animatedImage"), .animatedImage)
+        XCTAssertEqual(DNSMediaType(rawValue: "pdfDocument"), .pdfDocument)
+        XCTAssertEqual(DNSMediaType(rawValue: "staticImage"), .staticImage)
+        XCTAssertEqual(DNSMediaType(rawValue: "text"), .text)
         XCTAssertEqual(DNSMediaType(rawValue: "video"), .video)
-        XCTAssertEqual(DNSMediaType(rawValue: "audio"), .audio)
-        XCTAssertEqual(DNSMediaType(rawValue: "document"), .document)
-        XCTAssertEqual(DNSMediaType(rawValue: "other"), .other)
         XCTAssertNil(DNSMediaType(rawValue: "invalid"))
     }
     
     func testMediaTypeClassification() throws {
         // Test that different media types are distinct
-        XCTAssertNotEqual(DNSMediaType.image, DNSMediaType.video)
-        XCTAssertNotEqual(DNSMediaType.video, DNSMediaType.audio)
-        XCTAssertNotEqual(DNSMediaType.audio, DNSMediaType.document)
-        XCTAssertNotEqual(DNSMediaType.document, DNSMediaType.other)
+        XCTAssertNotEqual(DNSMediaType.unknown, DNSMediaType.video)
+        XCTAssertNotEqual(DNSMediaType.video, DNSMediaType.text)
+        XCTAssertNotEqual(DNSMediaType.staticImage, DNSMediaType.animatedImage)
+        XCTAssertNotEqual(DNSMediaType.pdfDocument, DNSMediaType.text)
     }
     
     func testDefaultFallback() throws {
-        // Test that 'other' can serve as a fallback for unknown types
-        let fallbackType = DNSMediaType.other
-        XCTAssertEqual(fallbackType.rawValue, "other")
+        // Test that 'unknown' can serve as a fallback for unrecognized types
+        let fallbackType = DNSMediaType.unknown
+        XCTAssertEqual(fallbackType.rawValue, "unknown")
     }
     
     func testStringRepresentation() throws {
-        XCTAssertEqual("\(DNSMediaType.image)", "image")
+        XCTAssertEqual("\(DNSMediaType.staticImage)", "staticImage")
         XCTAssertEqual("\(DNSMediaType.video)", "video")
     }
 }

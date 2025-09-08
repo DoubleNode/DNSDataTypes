@@ -35,9 +35,9 @@ final class DNSDataTypesTests: XCTestCase {
     
     func testMediaTypeValues() throws {
         // Test that media types cover expected cases
-        let types: [DNSMediaType] = [.image, .video, .audio, .document, .other]
-        XCTAssertEqual(types.count, 5)
-        XCTAssertEqual(DNSMediaType.allCases.count, 5)
+        let types: [DNSMediaType] = [.unknown, .animatedImage, .pdfDocument, .staticImage, .text, .video]
+        XCTAssertEqual(types.count, 6)
+        XCTAssertEqual(DNSMediaType.allCases.count, 6)
     }
     
     // MARK: - Complex Object Tests
@@ -117,7 +117,7 @@ final class DNSDataTypesTests: XCTestCase {
         // Test that enums follow consistent patterns
         
         // String-based enums should have lowercase raw values
-        XCTAssertEqual(DNSMediaType.image.rawValue, "image")
+        XCTAssertEqual(DNSMediaType.staticImage.rawValue, "staticImage")
         XCTAssertEqual(DNSSystemState.green.rawValue, "green")
         
         // Int-based enums should have meaningful numeric values
@@ -141,7 +141,7 @@ final class DNSDataTypesTests: XCTestCase {
             for _ in 0..<10000 {
                 let _ = DNSOrderState(rawValue: "pending")
                 let _ = DNSUserRole.endUser.isAdmin(for: .place)
-                let _ = DNSMediaType.allCases.contains(.image)
+                let _ = DNSMediaType.allCases.contains(.staticImage)
             }
         }
     }

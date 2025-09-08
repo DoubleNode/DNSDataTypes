@@ -53,7 +53,7 @@ final class DNSEnumIntegrationTests: XCTestCase {
         // Test that enums with string raw values have consistent casing
         XCTAssertEqual(DNSAppActionType.fullScreen.rawValue, "fullScreen") // camelCase
         XCTAssertEqual(DNSBeaconDistance.immediate.rawValue, "immediate") // lowercase
-        XCTAssertEqual(DNSMediaType.document.rawValue, "document") // lowercase
+        XCTAssertEqual(DNSMediaType.pdfDocument.rawValue, "pdfDocument") // lowercase
         XCTAssertEqual(DNSOrderState.processing.rawValue, "processing") // lowercase
         XCTAssertEqual(DNSSystemState.red.rawValue, "red") // lowercase
     }

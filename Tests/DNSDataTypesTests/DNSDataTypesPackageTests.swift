@@ -82,7 +82,7 @@ final class DNSDataTypesPackageTests: XCTestCase {
         
         let analytics = DNSAnalyticsNumbers()
         let appAction = DNSAppActionType.drawer
-        let mediaType = DNSMediaType.image
+        let mediaType = DNSMediaType.staticImage
         let orderState = DNSOrderState.pending
         let userRole = DNSUserRole.endUser
         let price = DNSPrice()
@@ -153,7 +153,7 @@ final class DNSDataTypesPackageTests: XCTestCase {
         
         // All enums should be String-based for JSON compatibility
         XCTAssertTrue(DNSAppActionType.drawer.rawValue is String)
-        XCTAssertTrue(DNSMediaType.image.rawValue is String)
+        XCTAssertTrue(DNSMediaType.staticImage.rawValue is String)
         XCTAssertTrue(DNSOrderState.pending.rawValue is String)
         XCTAssertTrue(DNSNotificationType.alert.rawValue is String)
         XCTAssertTrue(DNSReactionType.like.rawValue is String)

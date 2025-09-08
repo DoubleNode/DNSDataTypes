@@ -10,9 +10,10 @@ import Foundation
 
 /// Media type enumeration
 public enum DNSMediaType: String, CaseIterable, Codable {
-    case image = "image"
-    case video = "video"
-    case audio = "audio"
-    case document = "document"
-    case other = "other"
+    case unknown
+    case animatedImage
+    case pdfDocument
+    case staticImage
+    case text
+    case video
 }
