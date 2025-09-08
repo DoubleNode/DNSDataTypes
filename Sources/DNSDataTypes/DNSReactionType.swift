@@ -3,19 +3,21 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSDataTypes
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2025 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import Foundation
 
+/// Reaction type enumeration
 public enum DNSReactionType: String, CaseIterable, Codable {
-    case unknown = ""
-    case angered
-    case cared
-    case favorited
-    case humored
-    case liked
-    case loved
-    case saddened
-    case wowed
+    case unknown = "unknown"
+    case angered = "angered"
+    case cared = "cared"
+    case favorited = "favorited"
+    case humored = "humored"
+    case like = "like"
+    case liked = "liked"
+    case loved = "loved"
+    case saddened = "saddened"
+    case wowed = "wowed"
 }

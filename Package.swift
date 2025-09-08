@@ -4,7 +4,7 @@
 //  DoubleNode Swift Framework (DNSFramework) - DNSDataTypes
 //
 //  Created by Darren Ehlers.
-//  Copyright © 2022 - 2016 DoubleNode.com. All rights reserved.
+//  Copyright © 2025 - 2016 DoubleNode.com. All rights reserved.
 //
 
 import PackageDescription
@@ -38,7 +38,7 @@ let package = Package(
             ]),
         .testTarget(
             name: "DNSDataTypesTests",
-            dependencies: ["DNSDataTypes"]),
+            dependencies: ["DNSDataTypes", "DNSCore"]),
     ],
     swiftLanguageVersions: [.v5]
 )
