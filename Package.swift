@@ -14,6 +14,7 @@ let package = Package(
     platforms: [
         .iOS(.v16),
         .tvOS(.v16),
+        .macCatalyst(.v16),
         .macOS(.v13),
         .watchOS(.v9),
     ],
@@ -26,7 +27,9 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", from: "1.11.10"),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", .upToNextMajor(from: "1.12.0")),
+//        .package(path: "../DNSCore"),
+//        .package(url: "https://github.com/peek-travel/swift-currency.git", .upToNextMajor(from: "1.1.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -35,6 +38,7 @@ let package = Package(
             name: "DNSDataTypes",
             dependencies: [
                 "DNSCore",
+//                .product(name: "Currency", package: "swift-currency"),
             ]),
         .testTarget(
             name: "DNSDataTypesTests",
