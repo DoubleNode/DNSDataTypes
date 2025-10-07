@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCore.git",
       "state" : {
-        "revision" : "f3ce678397cf02195e94f759978a022acb80fc4f",
-        "version" : "1.12.0"
+        "revision" : "ea940ed4f9a464b6e553ed1c77a665b26374238e",
+        "version" : "1.12.1"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DoubleNode/DNSCoreThreading.git",
       "state" : {
-        "revision" : "cc5e2487c762059be53d28f2679bf95a887dda43",
-        "version" : "1.12.0"
+        "revision" : "1d8074373c2a61765e7fb5b68a714cf99577ac8d",
+        "version" : "1.12.1"
       }
     },
     {

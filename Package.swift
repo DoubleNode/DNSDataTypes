@@ -27,7 +27,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/DoubleNode/DNSCore.git", .upToNextMajor(from: "1.12.0")),
+        .package(url: "https://github.com/DoubleNode/DNSCore.git", .upToNextMajor(from: "1.12.1")),
 //        .package(path: "../DNSCore"),
 //        .package(url: "https://github.com/peek-travel/swift-currency.git", .upToNextMajor(from: "1.1.0")),
     ],
